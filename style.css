@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --button-border-radius: 5px;
+}
+
+body {
+    font-family: "Roboto Condensed";
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom right , #94395e, #1d1a65);
+}
+
+.btn {
+    padding: 15px 40px;
+    cursor: pointer;
+    border-radius: var(--button-border-radius);
+    border: none;
+    font-size: xx-large;
+    margin: 40px;
+}
+
+/* first button */
+
+.btn1 {
+    background-color: #ffec34;
+    position: relative;
+}
+
+.btn1:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn1::before, .btn1::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #fff;
+    width: 0;
+    transition: all .5s ease-in-out;
+}
+
+.btn1::before {
+    top: 0;
+    left: 0;
+}
+
+.btn1::after {
+    bottom: 0;
+    right: 0;
+}
+
+.btn1:hover::after, .btn1:hover::before {
+    width: 100%;
+}
+
+/* second button */
+
+.btn2 {
+    background-color: #fff;
+    position: relative;
+    z-index: 0;
+} 
+
+.btn2:hover {
+    color: #fff;
+}
+
+.btn2::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #9c0303;
+    border-radius: var(--button-border-radius);
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0.5);
+    transition: all .5s ease-in-out;
+    transform-origin: left;
+    z-index: -1;
+}
+
+.btn2:hover::before {
+    transform: scaleX(1);
+}
+
+/* third button */
+.btn3 {
+    background-color: rgb(51, 82, 6);
+    color: #fff;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.btn3:hover {
+    box-shadow: 0 0 5px 5px rgb(124, 177, 45),
+    0 0 25px 25px rgb(124, 177, 45);
+}
